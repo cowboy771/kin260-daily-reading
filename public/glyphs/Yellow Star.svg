@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 500 500">
+  <!-- Generator: Adobe Illustrator 30.2.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 1)  -->
+  <rect width="500" height="500" fill="#e5bc32" stroke="#231f20" stroke-miterlimit="10" stroke-width="1.6"/>
+  <path d="M250,3.608l11.944,40.21c27.765,93.468,100.938,166.539,194.445,194.173l40.637,12.009-40.637,12.009c-93.507,27.634-166.68,100.705-194.445,194.173l-11.944,40.21-11.944-40.21c-27.765-93.468-100.938-166.539-194.445-194.173l-40.637-12.009,40.637-12.009c93.507-27.634,166.68-100.705,194.445-194.173l11.944-40.21Z" fill="#fedb3e" stroke="#231f20" stroke-miterlimit="10" stroke-width="1.6"/>
+  <ellipse cx="82.769" cy="82.769" rx="12.845" ry="21.805" transform="translate(-34.263 80.547) rotate(-43.912)" fill="#fedb3e" stroke="#231f20" stroke-miterlimit="10" stroke-width="1.6"/>
+  <ellipse cx="417.231" cy="82.769" rx="21.805" ry="12.845" transform="translate(68.232 325.94) rotate(-46.088)" fill="#fedb3e" stroke="#231f20" stroke-miterlimit="10" stroke-width="1.6"/>
+  <ellipse cx="82.769" cy="416.003" rx="21.805" ry="12.845" transform="translate(-274.327 187.111) rotate(-46.088)" fill="#fedb3e" stroke="#231f20" stroke-miterlimit="10" stroke-width="1.6"/>
+  <ellipse cx="417.231" cy="417.542" rx="12.845" ry="21.805" transform="translate(-172.932 406.113) rotate(-43.912)" fill="#fedb3e" stroke="#231f20" stroke-miterlimit="10" stroke-width="1.6"/>
+  <path d="M500,500H0V0h500v493.393c0,.323,0,6.607,0,6.607Z" fill="none" stroke="#231f20" stroke-linecap="round" stroke-miterlimit="10" stroke-width="3.2"/>
+</svg>
