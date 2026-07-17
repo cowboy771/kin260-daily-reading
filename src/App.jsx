@@ -697,7 +697,7 @@ function GlyphPlaceholder({ seal, colorMap, size = 56 }) {
   if (!failed) {
     return (
       <img
-        src={`/glyphs/${seal.name}.svg`}
+        src={`/glyphs/${seal.name}.webp`}
         alt={seal.name}
         width={size}
         height={size}
