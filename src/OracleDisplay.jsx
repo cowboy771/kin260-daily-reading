@@ -204,6 +204,9 @@ export default function OracleDisplay({
             align-items: center !important;
             gap: 16px !important;
           }
+          .kin260-hero-inner {
+            display: none !important;
+          }
         }
       `}</style>
 
@@ -234,64 +237,71 @@ export default function OracleDisplay({
           flexDirection: 'column',
           alignItems: 'center',
         }}>
-          <SketchDivider width={60} style={{ marginBottom: 24 }} />
-          <div
-            onMouseEnter={supportsHover && !dailyMode ? () => setActiveKey('birthKin') : undefined}
-            onMouseLeave={supportsHover && !dailyMode ? () => setActiveKey(null) : undefined}
-            onClick={() => handleTap('birthKin')}
-            style={{
-              cursor: 'pointer',
-              transition: 'transform 0.15s ease',
-              transform: activeKey === 'birthKin' ? 'scale(1.05)' : 'scale(1)',
-            }}
-          >
-            <GlyphPlaceholder seal={heroSeal} colorMap={sealColorMap} size={238} />
-          </div>
+          {/* Grouped so the entire large hero glyph + its reveal text can
+              be hidden on mobile via CSS (see .kin260-hero-inner above),
+              leaving only the glyph cross visible on small screens. Tap
+              interactions on the cross are unaffected — they still open
+              the InfoCard popup (dailyMode) independent of this block. */}
+          <div className="kin260-hero-inner">
+            <SketchDivider width={60} style={{ marginBottom: 24 }} />
+            <div
+              onMouseEnter={supportsHover && !dailyMode ? () => setActiveKey('birthKin') : undefined}
+              onMouseLeave={supportsHover && !dailyMode ? () => setActiveKey(null) : undefined}
+              onClick={() => handleTap('birthKin')}
+              style={{
+                cursor: 'pointer',
+                transition: 'transform 0.15s ease',
+                transform: activeKey === 'birthKin' ? 'scale(1.05)' : 'scale(1)',
+              }}
+            >
+              <GlyphPlaceholder seal={heroSeal} colorMap={sealColorMap} size={238} />
+            </div>
 
-          <div style={{
-            marginTop: 28,
-            maxWidth: 380,
-            textAlign: 'center',
-            fontFamily: "'Cormorant Garamond', 'Georgia', serif",
-          }}>
-            {dailyMode ? (
-              !activeKey && (
+            <div style={{
+              marginTop: 28,
+              maxWidth: 380,
+              textAlign: 'center',
+              fontFamily: "'Cormorant Garamond', 'Georgia', serif",
+            }}>
+              {dailyMode ? (
+                !activeKey && (
+                  <p style={{ fontSize: 16, color: '#1a1714', fontStyle: 'italic' }}>
+                    Tap a glyph to read its meaning.
+                  </p>
+                )
+              ) : activeKey ? (
+                <>
+                  <div style={{
+                    fontSize: 22,
+                    fontWeight: 700,
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase',
+                    fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif",
+                    fontStyle: 'italic',
+                    color: '#1a1714',
+                    marginBottom: 8,
+                  }}>
+                    {ACTIVE_LABELS[activeKey]}
+                  </div>
+                  <p style={{
+                    fontSize: 22,
+                    color: '#1a1714',
+                    fontStyle: 'italic',
+                    marginBottom: 14,
+                  }}>
+                    {POSITION_DESCRIPTIONS[activeKey]}
+                  </p>
+                  <p style={{ fontSize: 19, lineHeight: 1.6, color: '#1a1714' }}>
+                    <strong>{chart[activeKey].slice(0, heroSeal.name.length)}</strong>
+                    {chart[activeKey].slice(heroSeal.name.length)}
+                  </p>
+                </>
+              ) : (
                 <p style={{ fontSize: 16, color: '#1a1714', fontStyle: 'italic' }}>
-                  Tap a glyph to read its meaning.
+                  {supportsHover ? 'Hover over a glyph to read its meaning.' : 'Tap a glyph to read its meaning.'}
                 </p>
-              )
-            ) : activeKey ? (
-              <>
-                <div style={{
-                  fontSize: 22,
-                  fontWeight: 700,
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif",
-                  fontStyle: 'italic',
-                  color: '#1a1714',
-                  marginBottom: 8,
-                }}>
-                  {ACTIVE_LABELS[activeKey]}
-                </div>
-                <p style={{
-                  fontSize: 22,
-                  color: '#1a1714',
-                  fontStyle: 'italic',
-                  marginBottom: 14,
-                }}>
-                  {POSITION_DESCRIPTIONS[activeKey]}
-                </p>
-                <p style={{ fontSize: 19, lineHeight: 1.6, color: '#1a1714' }}>
-                  <strong>{chart[activeKey].slice(0, heroSeal.name.length)}</strong>
-                  {chart[activeKey].slice(heroSeal.name.length)}
-                </p>
-              </>
-            ) : (
-              <p style={{ fontSize: 16, color: '#1a1714', fontStyle: 'italic' }}>
-                {supportsHover ? 'Hover over a glyph to read its meaning.' : 'Tap a glyph to read its meaning.'}
-              </p>
-            )}
+              )}
+            </div>
           </div>
         </div>
 
