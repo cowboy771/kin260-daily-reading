@@ -207,6 +207,10 @@ export default function OracleDisplay({
           .kin260-hero-inner {
             display: none !important;
           }
+          .kin260-hero-column {
+            flex-basis: 0 !important;
+            margin-bottom: 0 !important;
+          }
         }
       `}</style>
 
@@ -230,7 +234,7 @@ export default function OracleDisplay({
         gap: 48,
         marginBottom: 40,
       }}>
-        <div ref={heroColumnRef} style={{
+        <div ref={heroColumnRef} className="kin260-hero-column" style={{
           flex: '1 1 260px',
           width: '100%',
           display: 'flex',
