@@ -104,7 +104,6 @@ export function CrossCard({ label, seal, colorMap, large, active, onEnter, onLea
         letterSpacing: '0.06em',
         textTransform: 'uppercase',
         marginBottom: 8,
-        fontStyle: 'italic',
         fontFamily: "'Cormorant Garamond', 'Georgia', serif",
       }}>
         {label}
@@ -119,6 +118,7 @@ export function CrossCard({ label, seal, colorMap, large, active, onEnter, onLea
       <div style={{
         fontSize: large ? 15 : 11,
         fontWeight: 500,
+        fontStyle: 'italic',
         color: '#1a1714',
         marginTop: 8,
         lineHeight: 1.25,
@@ -372,11 +372,10 @@ export default function OracleDisplay({
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
               fontFamily: "'Cormorant Garamond', 'Georgia', serif",
-              fontStyle: 'italic',
             }}>
               Tone
             </span>
-            <span style={{ fontSize: 14, color: '#1a1714', marginLeft: 8, fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif" }}>
+            <span style={{ fontSize: 14, fontStyle: 'italic', color: '#1a1714', marginLeft: 8, fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif" }}>
               {tone.name}
             </span>
           </div>
@@ -399,11 +398,10 @@ export default function OracleDisplay({
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
               fontFamily: "'Cormorant Garamond', 'Georgia', serif",
-              fontStyle: 'italic',
             }}>
               Wavespell
             </span>
-            <span style={{ fontSize: 14, color: '#1a1714', marginLeft: 8, fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif" }}>
+            <span style={{ fontSize: 14, fontStyle: 'italic', color: '#1a1714', marginLeft: 8, fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif" }}>
               {getSeal(wavespell.seal).name} · #{wavespell.number}
             </span>
           </div>

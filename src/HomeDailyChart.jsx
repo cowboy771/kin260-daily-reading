@@ -124,7 +124,7 @@ export default function HomeDailyChart() {
           </div>
 
           <div style={{
-            fontSize: 20, fontWeight: 700, color: COLORS.ink,
+            fontSize: 20, fontWeight: 400, color: COLORS.ink,
             letterSpacing: '0.08em',
             fontFamily: "'Cormorant Garamond', 'Georgia', serif",
             marginBottom: 4,
@@ -133,7 +133,7 @@ export default function HomeDailyChart() {
           </div>
 
           <div style={{
-            fontSize: 16, color: COLORS.ink, marginTop: 6,
+            fontSize: 16, fontWeight: 700, color: COLORS.ink, marginTop: 6,
             letterSpacing: '0.06em', textTransform: 'uppercase',
             fontFamily: "'Cormorant Garamond', 'Georgia', serif", marginBottom: 12,
           }}>
