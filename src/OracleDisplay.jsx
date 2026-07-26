@@ -105,7 +105,7 @@ export function CrossCard({ label, seal, colorMap, large, active, onEnter, onLea
         textTransform: 'uppercase',
         marginBottom: 8,
         fontStyle: 'italic',
-        fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif",
+        fontFamily: "'Cormorant Garamond', 'Georgia', serif",
       }}>
         {label}
       </div>
@@ -122,7 +122,7 @@ export function CrossCard({ label, seal, colorMap, large, active, onEnter, onLea
         color: '#1a1714',
         marginTop: 8,
         lineHeight: 1.25,
-        fontFamily: "'Cormorant Garamond', 'Georgia', serif",
+        fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif",
       }}>
         {seal.name}
       </div>
@@ -371,12 +371,12 @@ export default function OracleDisplay({
               color: '#1a1714',
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif",
+              fontFamily: "'Cormorant Garamond', 'Georgia', serif",
               fontStyle: 'italic',
             }}>
               Tone
             </span>
-            <span style={{ fontSize: 14, color: '#1a1714', marginLeft: 8 }}>
+            <span style={{ fontSize: 14, color: '#1a1714', marginLeft: 8, fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif" }}>
               {tone.name}
             </span>
           </div>
@@ -398,12 +398,12 @@ export default function OracleDisplay({
               color: '#1a1714',
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
-              fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif",
+              fontFamily: "'Cormorant Garamond', 'Georgia', serif",
               fontStyle: 'italic',
             }}>
               Wavespell
             </span>
-            <span style={{ fontSize: 14, color: '#1a1714', marginLeft: 8 }}>
+            <span style={{ fontSize: 14, color: '#1a1714', marginLeft: 8, fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif" }}>
               {getSeal(wavespell.seal).name} · #{wavespell.number}
             </span>
           </div>

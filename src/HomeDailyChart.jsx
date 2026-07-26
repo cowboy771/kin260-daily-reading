@@ -61,9 +61,13 @@ export default function HomeDailyChart() {
   const wavespell = calcWavespell(kin);
   const chart = generateChartText(kin, sealNum, toneNum, oracle, wavespell);
 
-  const displayDate = new Date().toLocaleDateString('en-GB', {
-    weekday: 'short', day: 'numeric', month: 'short', year: 'numeric',
-  });
+  const ordinal = (n) => {
+    const s = ['th', 'st', 'nd', 'rd'];
+    const v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+  };
+  const now = new Date();
+  const displayDate = `${now.toLocaleDateString('en-GB', { weekday: 'long' })}, ${ordinal(now.getDate())} of ${now.toLocaleDateString('en-GB', { month: 'long' })} ${now.getFullYear()}`;
 
   // Measures the hero glyph column's actual rendered position/width so
   // InfoCard can sit exactly above it — comparing the hero column's and
@@ -111,16 +115,17 @@ export default function HomeDailyChart() {
       <div ref={wrapperRef} style={{ maxWidth: 900, margin: '0 auto', position: 'relative' }}>
         <div style={{ textAlign: 'center', marginBottom: 8 }}>
           <div style={{
-            fontSize: 22, fontStyle: 'italic', fontWeight: 400,
-            fontFamily: "'IM Fell English', 'Georgia', serif",
-            color: COLORS.ink, marginBottom: 6,
+            fontSize: 22, fontWeight: 700, color: COLORS.ink,
+            letterSpacing: '0.08em',
+            fontFamily: "'Cormorant Garamond', 'Georgia', serif",
+            marginBottom: 6,
           }}>
             Today
           </div>
 
           <div style={{
             fontSize: 20, fontWeight: 700, color: COLORS.ink,
-            letterSpacing: '0.08em', textTransform: 'uppercase',
+            letterSpacing: '0.08em',
             fontFamily: "'Cormorant Garamond', 'Georgia', serif",
             marginBottom: 4,
           }}>
@@ -132,7 +137,7 @@ export default function HomeDailyChart() {
             letterSpacing: '0.06em', textTransform: 'uppercase',
             fontFamily: "'Cormorant Garamond', 'Georgia', serif", marginBottom: 12,
           }}>
-            Kin Number {kin}
+            Kin {kin}
           </div>
           <h2 style={{
             fontSize: 32, fontWeight: 400, fontStyle: 'italic',
