@@ -247,7 +247,7 @@ export default function OracleDisplay({
               interactions on the cross are unaffected — they still open
               the InfoCard popup (dailyMode) independent of this block. */}
           <div className="kin260-hero-inner">
-            <SketchDivider width={60} style={{ marginBottom: 24 }} />
+            <SketchDivider width={60} style={{ marginBottom: 24, marginLeft: 'auto', marginRight: 'auto' }} />
             <div
               onMouseEnter={supportsHover && !dailyMode ? () => setActiveKey('birthKin') : undefined}
               onMouseLeave={supportsHover && !dailyMode ? () => setActiveKey(null) : undefined}
@@ -270,7 +270,7 @@ export default function OracleDisplay({
               {dailyMode ? (
                 !activeKey && (
                   <p style={{ fontSize: 16, color: '#1a1714', fontStyle: 'italic' }}>
-                    Tap a glyph to read its meaning.
+                    {supportsHover ? 'Click on a glyph to read its meaning.' : 'Tap a glyph to read its meaning.'}
                   </p>
                 )
               ) : activeKey ? (
