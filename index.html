@@ -11,5 +11,32 @@
   <body style="margin:0;">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      (function () {
+        // Reports this page's real content height to whatever window is
+        // embedding it (e.g. the Squarespace iframe), so the iframe can
+        // resize to fit exactly — no inner scrollbar, no double-scroll.
+        // Paired with a small listener script in the Squarespace embed
+        // code block that reads this message and sets the iframe height.
+        function sendHeight() {
+          var height = document.documentElement.scrollHeight;
+          window.parent.postMessage({ type: 'kin260-resize', height: height }, '*');
+        }
+        window.addEventListener('load', sendHeight);
+        window.addEventListener('resize', sendHeight);
+        if (window.ResizeObserver) {
+          new ResizeObserver(sendHeight).observe(document.body);
+        }
+        // Catch content changes that don't fire a resize event on their
+        // own (e.g. React swapping the calculated chart into view).
+        new MutationObserver(sendHeight).observe(document.body, {
+          childList: true, subtree: true, attributes: true,
+        });
+        // A few follow-up pings catch late-loading fonts/images shifting
+        // the layout slightly after the initial paint.
+        setTimeout(sendHeight, 300);
+        setTimeout(sendHeight, 1000);
+      })();
+    </script>
   </body>
 </html>
