@@ -190,59 +190,6 @@ export default function HomeDailyChart() {
           </p>
           <ChartDiagram captions={DAILY_CAPTIONS} />
         </div>
-
-        {/* RITUAL — placeholder slot, carried over from the previous
-            homepage version. Content intentionally not built yet; a
-            draft template was discussed but not approved:
-            "Today's ritual: [Tone Power], then let it [Color mode]."
-            Color modes: Red=initiate, White=refine, Blue=transform,
-            Yellow=ripen. Replace the paragraph below when ready. */}
-        <div style={{
-          borderTop: '1px solid #1a171422',
-          marginTop: 40,
-          paddingTop: 28,
-          textAlign: 'center',
-          fontFamily: "'Cormorant Garamond', 'Georgia', serif",
-        }}>
-          <div style={{
-            fontSize: 13,
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            fontStyle: 'italic',
-            fontFamily: "'IM Fell English', 'Cormorant Garamond', 'Georgia', serif",
-            marginBottom: 8,
-          }}>
-            Ritual
-          </div>
-          <p style={{ fontSize: 15, color: COLORS.label, fontStyle: 'italic' }}>
-            Coming soon.
-          </p>
-        </div>
-
-        {/* CTA — carried over from the previous homepage version.
-            TODO: point this at the real booking page URL once the
-            booking setup is live. */}
-        <div style={{ textAlign: 'center', marginTop: 32 }}>
-          <a
-            href="#"
-            style={{
-              display: 'inline-block',
-              padding: '16px 40px',
-              fontSize: 14,
-              fontWeight: 500,
-              fontFamily: "'Cormorant Garamond', 'Georgia', serif",
-              background: '#1a1714',
-              color: COLORS.cream,
-              borderRadius: 999,
-              cursor: 'pointer',
-              letterSpacing: '0.04em',
-              textTransform: 'uppercase',
-              textDecoration: 'none',
-            }}
-          >
-            Book a Kin260 Reading
-          </a>
-        </div>
       </div>
     </div>
   );
